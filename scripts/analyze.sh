@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ ! -n "$(command -v dot)" ] then
+  printf "\n [ ERROR ] Command dot (graphviz) was not instaled sucessful. Restart script."
+  kill $$
+fi
+
 for contract in "HelloBEP20" "SimpleBEP20" "StandardBEP20" "BurnableBEP20" "MintableBEP20" "CommonBEP20" "UnlimitedBEP20" "AmazingBEP20" "ServiceReceiver"
 do
   npx surya inheritance dist/$contract.dist.sol | dot -Tpng > analysis/inheritance-tree/$contract.png

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ ! -n "$(command -v dot)" ] then
-  printf "\n [ ERROR ] Command dot (graphviz) was not instaled sucessful. Restart script."
+  printf "\n [ ERROR ] Command dot (graphviz) isn't instaled. Please install graphviz."
   kill $$
 fi
 
